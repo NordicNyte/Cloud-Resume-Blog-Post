@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud Resume Challenge: What I Learned</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+        }
+        header {
+            background: #007acc;
+            color: #fff;
+            padding: 1rem 2rem;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2rem;
+        }
+        main {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 1rem;
+            background: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        h2, h3 {
+            color: #007acc;
+        }
+        p {
+            margin: 1rem 0;
+        }
+        ul {
+            margin: 1rem 0;
+            padding: 0 1rem;
+        }
+        li {
+            margin-bottom: 0.5rem;
+        }
+        code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 4px;
+            font-family: monospace;
+            color: #d63384;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Completing the Cloud Resume Challenge: What I Learned</h1>
+    </header>
+    <main>
+        <section>
+            <h2>Embracing the Challenge</h2>
+            <p>Over the Fall 2024 semester, I completed the Cloud Resume Challenge. When my Networking and Cloud Computing professor introduced it, I was both excited and nervous. He warned us about the complexity of connecting all the pieces, saying that people often fail. This wasn’t just about building a resume, it was about diving deep into professional cloud tech. It combined web development, cloud services, and DevOps practices into a single project.</p>
+            <p>The goal was to create an interactive online resume hosted in the cloud, complete with a visitor counter, HTTPS, Infrastructure as Code, and a CI/CD pipeline. Along the way, I learned far more than technical skills. This project encouraged me to think critically and take charge of my own learning. Here’s what I discovered about the tools and services I used, why they mattered, and how this experience shaped me.</p>
+        </section>
+        
+        <section>
+            <h2>The What and Why Behind the Challenge</h2>
+            <p>The Cloud Resume Challenge wasn’t just about making a fancy resume. It was about proving I could learn modern tech and create something meaningful. The challenge required me to:</p>
+            <ul>
+                <li>Host my resume on AWS.</li>
+                <li>Add a JavaScript-based visitor counter backed by a database.</li>
+                <li>Use infrastructure as code (IaC) for deployment.</li>
+                <li>Automate workflows with CI/CD pipelines.</li>
+            </ul>
+            <p>This project helped me showcase my ability to use tools that professional cloud engineers rely on. It also highlighted the importance of applying technical skills to solve real-world problems.</p>
+        </section>
+
+        <section>
+            <h2>My Experience</h2>
+            <h3>Amazon S3 and CloudFront: Hosting and Delivery</h3>
+            <p>To host my resume, I used Amazon S3, a simple, scalable storage service. S3 made it easy to upload and curate the content for my website: HTML, CSS, and JavaScript. It was super straightforward to use: upload the files, test the code, and the site was basically live.</p>
+            <p>To make sure my site loaded quickly, I paired S3 with CloudFront, AWS’s content delivery network. CloudFront saved my website files on servers around the world, allowing users to access the site faster, no matter where they were. It also enforced HTTPS, keeping the connection secure.</p>
+
+            <h3>Route 53 and Buying My Domain</h3>
+            <p>While my S3 bucket did serve my website content, to make my resume accessible online, I needed a custom domain name. I purchased "aidantaggart.com" from Namecheap at a great price. Afterward, I used AWS Route 53 to connect the domain to my cloud-hosted resume. That way, my content would appear if someone searched up my website.</p>
+            <p>Route 53 handled the DNS settings, directing my visitors to my website when they typed in my domain name. It was my first time configuring DNS records like A and CNAME, and while it was a little confusing at first, I quickly learned how to set it up and connected it to my other AWS resources.</p>
+            
+            <h3>DynamoDB: Managing Visitor Data</h3>
+            <p>For the visitor counter, I needed a database that could handle frequent updates without slowing down. I chose AWS DynamoDB, a serverless NoSQL database, instead of a traditional SQL database. It was my first time working with NoSQL, and DynamoDB’s simplicity made it a great starting point.</p>
+        </section>
+
+        <section>
+            <h2>Reflections and Takeaways</h2>
+            <p>Working on this project was challenging but rewarding. There were moments of frustration, like debugging Terraform scripts at 2am or troubleshooting Lambda functions that wouldn’t update properly. Despite these obstacles, every problem I solved gave me a sense of accomplishment and built my confidence.</p>
+            <p><strong>Key Lessons Learned:</strong></p>
+            <ul>
+                <li><strong>Planning Is Crucial:</strong> Breaking the project into smaller tasks kept me organized and motivated.</li>
+                <li><strong>Documentation Matters:</strong> Reading AWS documentation and following my professor’s guides helped me troubleshoot effectively.</li>
+                <li><strong>Failure Is Part of Growth:</strong> Every error I encountered taught me something new, turning setbacks into learning opportunities.</li>
+            </ul>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 Aidan Taggart</p>
+    </footer>
+</body>
+</html>
