@@ -85,15 +85,27 @@
         <section>
             <h2>My Experience</h2>
             <h3>Amazon S3 and CloudFront: Hosting and Delivery</h3>
-            <p>To host my resume, I used Amazon S3, a simple, scalable storage service. S3 made it easy to upload and curate the content for my website: HTML, CSS, and JavaScript. It was super straightforward to use: upload the files, test the code, and the site was basically live.</p>
+            <p>To host my resume, I used Amazon S3, a simple, scalable storage service (the name makes sense now). S3 made it easy to upload and “curate” the content for my website: HTML, CSS, and JavaScript. It was super straightforward to use: upload the files, test the code, and the site was basically “live”.</p>
             <p>To make sure my site loaded quickly, I paired S3 with CloudFront, AWS’s content delivery network. CloudFront saved my website files on servers around the world, allowing users to access the site faster, no matter where they were. It also enforced HTTPS, keeping the connection secure.</p>
 
             <h3>Route 53 and Buying My Domain</h3>
-            <p>While my S3 bucket did serve my website content, to make my resume accessible online, I needed a custom domain name. I purchased "aidantaggart.com" from Namecheap at a great price. Afterward, I used AWS Route 53 to connect the domain to my cloud-hosted resume. That way, my content would appear if someone searched up my website.</p>
-            <p>Route 53 handled the DNS settings, directing my visitors to my website when they typed in my domain name. It was my first time configuring DNS records like A and CNAME, and while it was a little confusing at first, I quickly learned how to set it up and connected it to my other AWS resources.</p>
+            <p>While my S3 bucket did serve my website content, to make my resume accessible online, I needed a custom domain name. Simply put, I “bought myself”. I purchased "aidantaggart.com" from Namecheap at a great price. Afterward, I used AWS Route 53 to connect the domain to my cloud-hosted resume. That way, my content would appear if someone searched up my website.</p>
+            <p>Route 53 handled the DNS settings, which simply put, directs my visitors to my website when they typed in my domain name. It was my first time configuring DNS records like A and CNAME, and while it was a little confusing at first, I quickly learned how to set it up and connected it to my other AWS resources.</p>
             
             <h3>DynamoDB: Managing Visitor Data</h3>
             <p>For the visitor counter, I needed a database that could handle frequent updates without slowing down. I chose AWS DynamoDB, a serverless NoSQL database, instead of a traditional SQL database. It was my first time working with NoSQL, and DynamoDB’s simplicity made it a great starting point.</p>
+            <p>I designed a table to store and retrieve the visitor count and connected it to my resume, which was so much more simple than creating an SQL db. Without the need for database normalization, and the simple storage format (Key/Value Pair) I was able to quickly establish the db without any issues the first time.</p>
+
+            <h3>API Gateway and Lambda: Backend Logic</h3>
+            <p>To connect my visitor counter to DynamoDB, I used AWS API Gateway and Lambda functions. API Gateway acted as the “front door,” exposing visitors to my website, while Lambda handled the “backdoor” logic for updating the visitor counter.</p>
+            <p>Setting up Lambda was honestly tricky at first. Debugging the code without console logs was hilariously frustrating until I discovered AWS CloudWatch, which let me monitor and fix bugs so much more efficiently.</p>
+
+            <h3>Terraform: Infrastructure as Code</h3>
+            <p>To manage my cloud resources, I used Terraform. With Terraform, I wrote scripts to automate the creation and updates of resources like my S3 buckets, Lambda function, and API Gateway endpoints. This saved time and ensured everything was consistent. One of the best things about Terraform is that the script (HCL) is simple English with some formatting.</p>
+            <p>However, getting Terraform to work wasn’t actually that easy. Small mistakes, like incorrect file extensions or incorrect implementation of authentication keys, caused hours of headache. Once I overcame these hurdles, Terraform became super valuable. I was able to automate changes to my front end code and backend code. This meant I didn’t have to manually upload newly updated code though the AWS console UI, then wait to see if the update worked. I was able to do automated code testing before it was uploaded using both Terraform and Playwright.</p>
+
+            <h3>GitHub Actions: Automating Workflows</h3>
+            <p>To automate my workflow, I set up a CI/CD pipeline using GitHub Actions. With this setup, every time I pushed changes to my repository, GitHub Actions automatically tested the updates and deployed them to AWS. This automation saved time and reduced the risk of errors. Watching my code move seamlessly from development to production without manual intervention was also incredibly satisfying.</p>
         </section>
 
         <section>
@@ -105,6 +117,7 @@
                 <li><strong>Documentation Matters:</strong> Reading AWS documentation and following my professor’s guides helped me troubleshoot effectively.</li>
                 <li><strong>Failure Is Part of Growth:</strong> Every error I encountered taught me something new, turning setbacks into learning opportunities.</li>
             </ul>
+            <p>This project reaffirmed my passion for problem-solving and learning new tech. It showed me the importance of patience, curiosity, and self-directed learning when tackling new challenges. The Cloud Resume Challenge wasn’t just a technical exercise, it was a personal and professional milestone that prepared me for future projects and roles surrounding cloud tech.</p>
         </section>
     </main>
     <footer>
